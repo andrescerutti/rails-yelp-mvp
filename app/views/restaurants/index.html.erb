@@ -1,0 +1,13 @@
+
+<h1>Resto Guia</h1>
+
+<%= link_to "Agregar un restaurante", new_restaurant_path %>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>, ubicado en <%= restaurant.address %>
+    </li>
+  <% end %>
+
+</ul>

@@ -1,0 +1,14 @@
+<h1><%= @restaurant.name %> <small>(<%= @restaurant.category %>)</small></h1>
+<p>Ubicado en <%= @restaurant.address %> tel <%= @restaurant.phone_number %></p>
+
+
+<%= link_to "Volver al listado", restaurants_path %> |
+<%= link_to "Editar", edit_restaurant_path(@restaurant) %> |
+<%= link_to "Eliminar", restaurant_path(@restaurant), method: :delete, data: { confirm: "Seguro que desea elimnar un restaurante?"} %> |
+<%= link_to "Agregar un comentario", new_restaurant_review_path(@restaurant) %>
+
+<% @restaurant.reviews.each do |review| %>
+<ul>
+  <li> <%= review.content %> </li>
+</ul>
+<% end %>
